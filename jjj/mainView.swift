@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct mainView: View {
-    let defaults = UserDefaults.standard
-
     
-    @State var selectedInterval = "7500"
+    @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var presentAlert = false
-    @State var currentMil: String = "\(11000)"
-    @State var startMil: String = "\(10000)"
+    @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(11000)"
+    @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(10000)"
     @State var newCurrentMil: String = "\(0)"
     @State var newStartMil: String = "\(0)"
     
@@ -31,8 +29,7 @@ struct mainView: View {
                 
                 HStack{
                     Text("Service in")
-                    Text("")
-                    
+                    Text("\((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
                 }
                 .padding()
                 
@@ -50,11 +47,12 @@ struct mainView: View {
                 }, message: {
                     Text("Type your current mileage here")
                 })
-                
             }
-            
-            
-            
+            .onDisappear {
+                UserDefaults.standard.set(selectedInterval, forKey: "selectedInterval")
+                UserDefaults.standard.set(currentMil, forKey: "currentMil")
+                UserDefaults.standard.set(startMil, forKey: "startMil")
+            }
         }
     }
 }
