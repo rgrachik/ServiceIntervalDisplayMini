@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct mainView: View {
+    let defaults = UserDefaults.standard
+
     
     @State var selectedInterval = "7500"
     @State var presentAlert = false
@@ -29,7 +31,8 @@ struct mainView: View {
                 
                 HStack{
                     Text("Service in")
-                    Text("\(selectedInterval)")
+                    Text("")
+                    
                 }
                 .padding()
                 
