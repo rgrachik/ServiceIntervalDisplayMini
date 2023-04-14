@@ -17,10 +17,10 @@ struct mainView: View {
             return .green
         case 61...90:
             return .yellow
-        case 91...99:
-            return .orange
-        default:
+        case 91...100:
             return .red
+        default:
+            return .gray
         }
     }
     
@@ -64,6 +64,8 @@ struct mainView: View {
                 .alert("Current Mileage", isPresented: $presentAlert, actions: {
                     TextField("Current mileage", text: $newCurrentMil)
                         .keyboardType(.numberPad)
+//                        .textFieldStyle(RestrictedTextFieldStyle)
+                        
                     Button("OK", action: {currentMil = newCurrentMil})
                     Button("Cancel", role: .cancel, action: {newCurrentMil = currentMil})
                 }, message: {
@@ -78,6 +80,8 @@ struct mainView: View {
         }
     }
 }
+
+
 
 struct main_Previews: PreviewProvider {
     static var previews: some View {

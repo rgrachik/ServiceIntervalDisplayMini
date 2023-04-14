@@ -1,7 +1,7 @@
-////
-////  testView.swift
-////  jjj
-////
+//////
+//////  testView.swift
+//////  jjj
+//////
 ////  Created by Роман Грачик on 13.04.2023.
 ////
 //
@@ -17,7 +17,9 @@
 //        }
 //        .alert("Current Mil", isPresented: $presentAlert, actions: {
 //            TextField("Username", text: $username)
-//                .keyboardType(.decimalPad)
+//                .keyboardType(.numberPad)
+//                .textFieldStyle(RestrictedTextFieldStyle)
+//            
 //            Button("OK", action: {})
 //            Button("Cancel", role: .cancel, action: {username = ""})
 //        }, message: {
@@ -25,6 +27,8 @@
 //        })
 //    }
 //}
+//
+//
 //
 //struct testView_Previews: PreviewProvider {
 //    static var previews: some View {
