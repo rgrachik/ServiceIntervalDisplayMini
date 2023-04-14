@@ -16,34 +16,32 @@ struct ChangeView: View {
     
     var body: some View {
         NavigationView {
-                List {
-                    HStack{
-                        Text("Current mil")
-                        Spacer()
-                        Button("\(startMil)") {
-                            presentAlert = true
-                        }
-                        .foregroundColor(.accentColor)
-                        .alert("Current Mil", isPresented: $presentAlert, actions: {
-                            TextField("currentMil", text: $newStartMil)
-                                .keyboardType(.decimalPad)
-                            Button("OK", action: {startMil = newStartMil})
-                            Button("Cancel", role: .cancel, action: {newStartMil = ""})
-                        }, message: {
-                            Text("Type your current mileage here")
-                        })
-                        
+            List {
+                HStack{
+                    Text("Current mil")
+                    Spacer()
+                    Button("\(startMil)") {
+                        presentAlert = true
                     }
-                       
-                    Picker("Service interval", selection: $selectedInterval) {
-                        ForEach(options, id: \.self) {
-                            Text($0)
-                        }
-                    }.pickerStyle(.menu)
+                    .foregroundColor(.accentColor)
+                    .alert("Current Mil", isPresented: $presentAlert, actions: {
+                        TextField("currentMil", text: $newStartMil)
+                            .keyboardType(.numberPad)
+                        Button("OK", action: {startMil = newStartMil})
+                        Button("Cancel", role: .cancel, action: {newStartMil = startMil})
+                    }, message: {
+                        Text("Type your current mileage here")
+                    })
+                    
                 }
-                .navigationTitle("Settings")
                 
-//            }
+                Picker("Service interval", selection: $selectedInterval) {
+                    ForEach(options, id: \.self) {
+                        Text($0)
+                    }
+                }.pickerStyle(.menu)
+            }
+            .navigationTitle("Settings")
         }
     }
 }

@@ -9,12 +9,29 @@ import SwiftUI
 
 struct mainView: View {
     
+    var tintColor: Color {
+        let value = Int((Double(currentMil)! - Double(startMil)!)/Double(selectedInterval)! * 100)
+
+        switch value {
+        case 0...60:
+            return .green
+        case 61...90:
+            return .yellow
+        case 91...99:
+            return .orange
+        default:
+            return .red
+        }
+    }
+    
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var presentAlert = false
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(11000)"
     @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(10000)"
     @State var newCurrentMil: String = "\(0)"
     @State var newStartMil: String = "\(0)"
+    
+   
     
     var body: some View {
         NavigationStack{
@@ -24,12 +41,17 @@ struct mainView: View {
                     Text("Oil")
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
-                .tint(.cyan)
+                .tint(tintColor)
                 .padding()
                 
                 HStack{
                     Text("Service in")
                     Text("\((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
+                    
+//                    Проверка значения процента износа масла
+                    
+//                    Text("\(Int((Double(currentMil)! - Double(startMil)!)/Double(selectedInterval)! * 100))")
+                    
                 }
                 .padding()
                 
@@ -39,11 +61,11 @@ struct mainView: View {
                     presentAlert = true
                 }
                 .padding()
-                .alert("Current Mil", isPresented: $presentAlert, actions: {
+                .alert("Current Mileage", isPresented: $presentAlert, actions: {
                     TextField("Current mileage", text: $newCurrentMil)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                     Button("OK", action: {currentMil = newCurrentMil})
-                    Button("Cancel", role: .cancel, action: {currentMil = "\(10000)"})
+                    Button("Cancel", role: .cancel, action: {newCurrentMil = currentMil})
                 }, message: {
                     Text("Type your current mileage here")
                 })
