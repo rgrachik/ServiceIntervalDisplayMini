@@ -26,7 +26,7 @@ struct mainView: View {
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var presentAlert = false
-    @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(11000)"
+    @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(14000)"
     @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(10000)"
     @State var newCurrentMil: String = "\(0)"
     @State var newStartMil: String = "\(0)"
@@ -42,6 +42,7 @@ struct mainView: View {
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
                 .tint(tintColor)
+                .shadow(color: tintColor, radius: 27)
                 .padding()
                 
                 HStack{
