@@ -39,11 +39,11 @@ struct mainView: View {
                     presentAlert = true
                 }
                 .padding()
-                .alert("Current Mil", isPresented: $presentAlert, actions: {
+                .alert("Current Mileage", isPresented: $presentAlert, actions: {
                     TextField("Current mileage", text: $newCurrentMil)
-                        .keyboardType(.decimalPad)
+                        .keyboardType(.numberPad)
                     Button("OK", action: {currentMil = newCurrentMil})
-                    Button("Cancel", role: .cancel, action: {currentMil = "\(10000)"})
+                    Button("Cancel", role: .cancel, action: {newCurrentMil = currentMil})
                 }, message: {
                     Text("Type your current mileage here")
                 })
