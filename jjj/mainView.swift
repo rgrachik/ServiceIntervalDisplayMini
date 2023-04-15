@@ -28,8 +28,8 @@ struct mainView: View {
     @State var presentAlert = false
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(14000)"
     @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(10000)"
-    @State var newCurrentMil: String = "\(0)"
-    @State var newStartMil: String = "\(0)"
+    @State var newCurrentMil: String = ""
+    @State var newStartMil: String = ""
     
    
     
@@ -68,7 +68,7 @@ struct mainView: View {
 //                        .textFieldStyle(RestrictedTextFieldStyle)
                         
                     Button("OK", action: {currentMil = newCurrentMil})
-                    Button("Cancel", role: .cancel, action: {newCurrentMil = currentMil})
+                    Button("Cancel", role: .cancel, action: {newCurrentMil = ""})
                 }, message: {
                     Text("Type your current mileage here")
                 })

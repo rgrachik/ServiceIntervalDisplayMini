@@ -18,17 +18,17 @@ struct ChangeView: View {
         NavigationView {
             List {
                 HStack{
-                    Text("Current mil")
+                    Text("Current mileage")
                     Spacer()
                     Button("\(startMil)") {
                         presentAlert = true
                     }
                     .foregroundColor(.accentColor)
-                    .alert("Current Mil", isPresented: $presentAlert, actions: {
-                        TextField("currentMil", text: $newStartMil)
+                    .alert("Current Mileage", isPresented: $presentAlert, actions: {
+                        TextField("Current Mileage", text: $newStartMil)
                             .keyboardType(.numberPad)
                         Button("OK", action: {startMil = newStartMil})
-                        Button("Cancel", role: .cancel, action: {newStartMil = startMil})
+                        Button("Cancel", role: .cancel, action: {newStartMil = ""})
                     }, message: {
                         Text("Type your current mileage here")
                     })
@@ -41,7 +41,7 @@ struct ChangeView: View {
                     }
                 }.pickerStyle(.menu)
             }
-            .navigationTitle("Settings")
+            .navigationTitle("Oil service settings")
         }
     }
 }
