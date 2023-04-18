@@ -94,11 +94,11 @@ struct mainView: View {
                             .foregroundColor(.gray)
                             .opacity(0.8)
                             .frame(maxWidth: .infinity, alignment: .leading)
-                        HStack {
+                        
                             TextField("Current Mileage ", text: $newCurrentMil)
                                 .keyboardType(.numberPad)
                                 .frame(width: 250)
-                                .border(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
+                                .border(newCurrentMil.isEmpty ? .gray : ((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
                                 .textFieldStyle(.roundedBorder)
                                 .overlay(
                                     Image(systemName:(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? "xmark.circle" : "checkmark.circle")))
@@ -108,8 +108,7 @@ struct mainView: View {
                                         .opacity(newCurrentMil.isEmpty ? 0 : 1),
                                     alignment: .trailing
                                 )
-                        }
-                        HStack {
+                        
                             Button("OK", action: {
                                 currentMil = newCurrentMil
                                 topExpanded = false
@@ -117,8 +116,7 @@ struct mainView: View {
                             })
                             .opacity((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? 0.5 : 1.0)
                             .disabled((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999))
-                            
-                        }
+                        
                     } 
                 }
             label: {
