@@ -123,7 +123,7 @@ struct mainView: View {
                 }
             label: {
                     HStack {
-                        Image(systemName: "gear")
+                        Image(systemName: "arrow.2.circlepath")
                         Text("Update mileage")
                     }
                 }
