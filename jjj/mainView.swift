@@ -11,7 +11,6 @@ import Combine
 struct mainView: View {
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
-    @State var presentAlert = false
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(11000)"
     @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(10000)"
     @State var newCurrentMil: String = ""
@@ -20,7 +19,7 @@ struct mainView: View {
     @State var topExpandedService = false
     
     
-    var options = ["5000", "7500", "10000"]
+    var options = ["5000", "7500", "10000", "15000"]
     
     var body: some View {
         VStack {
@@ -99,16 +98,18 @@ struct mainView: View {
                             TextField("Current Mileage ", text: $newCurrentMil)
                                 .keyboardType(.numberPad)
                                 .frame(width: 250)
-                                .foregroundColor(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
+                                .border(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
                                 .textFieldStyle(.roundedBorder)
-                            Image(systemName:(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? "xmark.circle" : "checkmark.circle")))
-                                .foregroundColor(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
+                                .overlay(
+                                    Image(systemName:(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? "xmark.circle" : "checkmark.circle")))
+                                        .foregroundColor(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
+                                    
+                                        .padding(.trailing, 8)
+                                        .opacity(newCurrentMil.isEmpty ? 0 : 1),
+                                    alignment: .trailing
+                                )
                         }
                         HStack {
-                            Spacer()
-                            Button("Cancel", role: .cancel, action: {topExpanded = false})
-                                .tint(.red)
-                            Spacer()
                             Button("OK", action: {
                                 currentMil = newCurrentMil
                                 topExpanded = false
@@ -117,7 +118,6 @@ struct mainView: View {
                             .opacity((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? 0.5 : 1.0)
                             .disabled((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999))
                             
-                            Spacer()
                         }
                     } 
                 }
