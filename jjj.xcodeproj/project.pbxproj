@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2784C76029EEC6E300DFD553 /* preView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784C75F29EEC6E300DFD553 /* preView.swift */; };
-		2784C76229EF039E00DFD553 /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2784C76129EF039E00DFD553 /* test.swift */; };
 		27B7445A29E7F78000825B3C /* jjjApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7445929E7F78000825B3C /* jjjApp.swift */; };
 		27B7445E29E7F78100825B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7445D29E7F78100825B3C /* Assets.xcassets */; };
 		27B7446129E7F78200825B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7446029E7F78200825B3C /* Preview Assets.xcassets */; };
@@ -16,8 +14,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2784C75F29EEC6E300DFD553 /* preView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = preView.swift; sourceTree = "<group>"; };
-		2784C76129EF039E00DFD553 /* test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		27B7445629E7F78000825B3C /* jjj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jjj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B7445929E7F78000825B3C /* jjjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jjjApp.swift; sourceTree = "<group>"; };
 		27B7445D29E7F78100825B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,8 +53,6 @@
 			children = (
 				27B7445929E7F78000825B3C /* jjjApp.swift */,
 				27B7446729E7FFC900825B3C /* mainView.swift */,
-				2784C75F29EEC6E300DFD553 /* preView.swift */,
-				2784C76129EF039E00DFD553 /* test.swift */,
 				27B7445D29E7F78100825B3C /* Assets.xcassets */,
 				27B7445F29E7F78200825B3C /* Preview Content */,
 			);
@@ -144,9 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B7445A29E7F78000825B3C /* jjjApp.swift in Sources */,
-				2784C76229EF039E00DFD553 /* test.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
-				2784C76029EEC6E300DFD553 /* preView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
