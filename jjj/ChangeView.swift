@@ -27,7 +27,10 @@ struct ChangeView: View {
                     .alert("Current Mil", isPresented: $presentAlert, actions: {
                         TextField("currentMil", text: $newStartMil)
                             .keyboardType(.numberPad)
-                        Button("OK", action: {startMil = newStartMil})
+                        Button("OK", action: {
+                            startMil = newStartMil
+                            
+                        })
                         Button("Cancel", role: .cancel, action: {newStartMil = startMil})
                     }, message: {
                         Text("Type your current mileage here")

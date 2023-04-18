@@ -12,7 +12,6 @@
 		27B7445E29E7F78100825B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7445D29E7F78100825B3C /* Assets.xcassets */; };
 		27B7446129E7F78200825B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7446029E7F78200825B3C /* Preview Assets.xcassets */; };
 		27B7446829E7FFC900825B3C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446729E7FFC900825B3C /* mainView.swift */; };
-		27B7446E29E8083A00825B3C /* testView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446D29E8083A00825B3C /* testView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,7 +21,6 @@
 		27B7445D29E7F78100825B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B7446029E7F78200825B3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27B7446729E7FFC900825B3C /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
-		27B7446D29E8083A00825B3C /* testView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +56,6 @@
 				27B7445929E7F78000825B3C /* jjjApp.swift */,
 				27B7446729E7FFC900825B3C /* mainView.swift */,
 				27B7445B29E7F78000825B3C /* ChangeView.swift */,
-				27B7446D29E8083A00825B3C /* testView.swift */,
 				27B7445D29E7F78100825B3C /* Assets.xcassets */,
 				27B7445F29E7F78200825B3C /* Preview Content */,
 			);
@@ -143,7 +140,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27B7446E29E8083A00825B3C /* testView.swift in Sources */,
 				27B7445C29E7F78000825B3C /* ChangeView.swift in Sources */,
 				27B7445A29E7F78000825B3C /* jjjApp.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
