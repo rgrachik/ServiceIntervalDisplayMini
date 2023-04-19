@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27B7445A29E7F78000825B3C /* jjjApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7445929E7F78000825B3C /* jjjApp.swift */; };
+		27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7445929E7F78000825B3C /* serviceIntervalApp.swift */; };
 		27B7445E29E7F78100825B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7445D29E7F78100825B3C /* Assets.xcassets */; };
 		27B7446129E7F78200825B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7446029E7F78200825B3C /* Preview Assets.xcassets */; };
 		27B7446829E7FFC900825B3C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446729E7FFC900825B3C /* mainView.swift */; };
@@ -15,7 +15,7 @@
 
 /* Begin PBXFileReference section */
 		27B7445629E7F78000825B3C /* jjj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jjj.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		27B7445929E7F78000825B3C /* jjjApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = jjjApp.swift; sourceTree = "<group>"; };
+		27B7445929E7F78000825B3C /* serviceIntervalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serviceIntervalApp.swift; sourceTree = "<group>"; };
 		27B7445D29E7F78100825B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B7446029E7F78200825B3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27B7446729E7FFC900825B3C /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 		27B7445829E7F78000825B3C /* jjj */ = {
 			isa = PBXGroup;
 			children = (
-				27B7445929E7F78000825B3C /* jjjApp.swift */,
+				27B7445929E7F78000825B3C /* serviceIntervalApp.swift */,
 				27B7446729E7FFC900825B3C /* mainView.swift */,
 				27B7445D29E7F78100825B3C /* Assets.xcassets */,
 				27B7445F29E7F78200825B3C /* Preview Content */,
@@ -137,7 +137,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27B7445A29E7F78000825B3C /* jjjApp.swift in Sources */,
+				27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +270,12 @@
 				DEVELOPMENT_TEAM = 27FU6W5HPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SID;
+				INFOPLIST_KEY_CFBundleDisplayName = "Service Interval";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "gear - HD 1080p";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -305,11 +306,12 @@
 				DEVELOPMENT_TEAM = 27FU6W5HPT;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = SID;
+				INFOPLIST_KEY_CFBundleDisplayName = "Service Interval";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "gear - HD 1080p";
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";

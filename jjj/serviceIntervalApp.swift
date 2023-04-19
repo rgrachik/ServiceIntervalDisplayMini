@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct jjjApp: App {
+struct serviceIntervalApp: App {
     var body: some Scene {
         WindowGroup {
             mainView()

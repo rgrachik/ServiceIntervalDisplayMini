@@ -156,8 +156,7 @@ struct mainView: View {
             .listStyle(.plain)
         }
         .frame(maxWidth: .infinity, maxHeight: 500)
-        .background(Color.white)
-        
+        .scrollDisabled(true)
 // MARK: Save in UserDefaults
         
         .onDisappear {
