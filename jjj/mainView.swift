@@ -11,12 +11,16 @@ import SwiftUI
 
 struct mainView: View {
     
+    let opacityColor = Color(red: 1, green: 0.5, blue: 0, opacity: 0)
+    
     var tintColor: Color {
         
         let percentOfVear = Int((Double(currentMil)! - Double(startMil)!) / Double(selectedInterval)! * 100)
         
         let value = percentOfVear
         switch value {
+        case ...0:
+            return opacityColor
         case 0...60:
             return .green
         case 61...95:
