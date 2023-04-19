@@ -43,15 +43,15 @@ struct mainView: View {
             return .gray
         }
     }
-        
-        var txt: String {
-            let serviceIn = ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)
-            switch serviceIn {
-            case 0...:
-                return "Service in"
-            default:
-                return "Overrun is"
-            }
+    
+    var txt: String {
+        let serviceIn = ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)
+        switch serviceIn {
+        case 0...:
+            return "Service in"
+        default:
+            return "Overrun is"
+        }
     }
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
@@ -64,20 +64,18 @@ struct mainView: View {
     
     var options = ["5000", "7500", "10000", "15000"]
     
-// MARK: - View
+    // MARK: - View
     
     var body: some View {
         VStack (alignment: .center, spacing: 20) {
-// MARK: Gauge
+            // MARK: Gauge
             ZStack{
                 Text("\(Image(systemName: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? "oilcan" : "oilcan.fill"))")
-                                .font(.system(size: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? 20 : 70))
-                                .foregroundColor(canTintColor)
+                    .font(.system(size: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? 20 : 70))
+                    .foregroundColor(canTintColor)
                 
                 Gauge(value: Double(currentMil)! , in: Double(startMil)!...Double(startMil)!+Double(selectedInterval)!) {
-//                    Text("\(Image(systemName: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? "oilcan" : "oilcan.fill"))")
-//                        .font(.system(size: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? 20 : 70))
-//                        .foregroundColor(canTintColor)
+                    
                 }
                 .gaugeStyle(.accessoryCircularCapacity)
                 .tint(tintColor)
@@ -85,10 +83,10 @@ struct mainView: View {
             // MARK: text service
             
             Text(txt + " " + "\(((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)) km")
-          
+            
             List {
                 
-// MARK: 1st DisclosureGroup
+                // MARK: 1st DisclosureGroup
                 DisclosureGroup(isExpanded: $topExpandedService) {
                     VStack {
                         VStack {
@@ -116,27 +114,34 @@ struct mainView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .overlay(
                                         
-// MARK: Button in TF
+                                        // MARK: Button in TF
                                         
                                         Button(action: {
-                                            if let newStartMilInt = Int(newStartMil),
-                                               let _ = Int(startMil),
-                                               (newStartMilInt >= 1 && newStartMilInt <= 999999) {
-                                                startMil = newStartMil
-                                                currentMil = startMil
-                                                topExpandedService = false
-                                                newStartMil = ""
-                                            } else {
-                                                newStartMil = ""
-                                            }
+                                            newStartMil = ""
                                         })  {
-                                            Image(systemName:(((Int(newStartMil) ?? 0 < 1) || (Int(newStartMil) ?? 0 > 999999) ? "xmark.circle" : "checkmark.circle")))
-                                                .foregroundColor(((Int(newStartMil) ?? 0 < 1) || (Int(newStartMil) ?? 0 > 999999) ? .red : .green))
+                                            Image(systemName:"xmark.circle")
+                                                .foregroundColor(.gray)
                                         }
                                             .padding(.trailing, 8)
                                             .opacity(newStartMil.isEmpty ? 0 : 1),
                                         alignment: .trailing
                                     )
+                                    .toolbar {
+                                        ToolbarItem(placement: .keyboard) {
+                                            Button("OK") {
+                                                if let newStartMilInt = Int(newStartMil),
+                                                   let _ = Int(startMil),
+                                                   (newStartMilInt >= 1 && newStartMilInt <= 999999) {
+                                                    startMil = newStartMil
+                                                    currentMil = startMil
+                                                    topExpandedService = false
+                                                    newStartMil = ""
+                                                } else {
+                                                    newStartMil = ""
+                                                }
+                                            }
+                                        }
+                                    }
                             }
                             Text("The current mileage progress will be reset")
                                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -152,7 +157,7 @@ struct mainView: View {
                 }
             }
                 
-// MARK: 2st DisclosureGroup
+                // MARK: 2st DisclosureGroup
                 
                 DisclosureGroup(isExpanded: $topExpanded) {
                     VStack {
@@ -171,24 +176,30 @@ struct mainView: View {
                                 
                                 // MARK: Button in TF
                                 
-                                Button(action: {
-                                    if let newCurrentMilInt = Int(newCurrentMil),
-                                       let currentMilInt = Int(currentMil),
-                                       (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
-                                        currentMil = newCurrentMil
-                                        topExpanded = false
-                                        newCurrentMil = ""
-                                    } else {
-                                        newCurrentMil = ""
-                                    }
-                                })  {
-                                    Image(systemName:(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? "xmark.circle" : "checkmark.circle")))
-                                        .foregroundColor(((Int(newCurrentMil) ?? 0 < Int(currentMil)!) || (Int(newCurrentMil) ?? 0 > 999999) ? .red : .green))
+                                Button(action: {newCurrentMil = ""})  {
+                                    Image(systemName:"xmark.circle")
+                                        .foregroundColor(.gray)
                                 }
                                     .padding(.trailing, 8)
                                     .opacity(newCurrentMil.isEmpty ? 0 : 1),
                                 alignment: .trailing
                             )
+                            .toolbar {
+                                ToolbarItem(placement: .keyboard) {
+                                    Button("OK") {
+                                        if let newCurrentMilInt = Int(newCurrentMil),
+                                           let currentMilInt = Int(currentMil),
+                                           (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
+                                            currentMil = newCurrentMil
+                                            topExpanded = false
+                                            newCurrentMil = ""
+                                        } else {
+                                            newCurrentMil = ""
+                                        }
+                                    }
+                                }
+                            }
+                        
                     }
                 }
             label: {
@@ -202,7 +213,7 @@ struct mainView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: 500)
         .scrollDisabled(true)
-// MARK: Save in UserDefaults
+        // MARK: Save in UserDefaults
         
         .onDisappear {
             UserDefaults.standard.set(selectedInterval, forKey: "selectedInterval")
