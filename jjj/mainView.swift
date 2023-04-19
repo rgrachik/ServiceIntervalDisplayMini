@@ -6,25 +6,24 @@
 //
 
 import SwiftUI
-//import Combine
 
 struct mainView: View {
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(0)"
     @State var startMil: String = UserDefaults.standard.string(forKey: "startMil") ?? "\(0)"
-    @State var newCurrentMil: String = "" 
+    @State var newCurrentMil: String = ""
     @State var newStartMil: String = ""
     @State var topExpanded = false
     @State var topExpandedService = false
     
     var options = ["5000", "7500", "10000", "15000"]
     
-    // MARK: - View
+// MARK: - View
     
     var body: some View {
-        VStack {
-            // MARK: Gauge
+        VStack (alignment: .center, spacing: 20) {
+// MARK: Gauge
             Gauge(value: Double(currentMil)! , in: Double(startMil)!...Double(startMil)!+Double(selectedInterval)!) {
                 Text("\(Image(systemName: "oilcan"))")
                     .font(.system(size: 20))
@@ -43,7 +42,7 @@ struct mainView: View {
             
             List {
                 
-                // MARK: 1st group
+// MARK: 1st DisclosureGroup
                 
                 DisclosureGroup(isExpanded: $topExpandedService) {
                     VStack {
@@ -72,20 +71,17 @@ struct mainView: View {
                                     .textFieldStyle(.roundedBorder)
                                     .overlay(
                                         
-                                        // MARK: Button in TF
+// MARK: Button in TF
                                         
                                         Button(action: {
                                             if let newStartMilInt = Int(newStartMil),
                                                let _ = Int(startMil),
                                                (newStartMilInt >= 1 && newStartMilInt <= 999999) {
-                                                // если новый текущий пробег больше или равен 1,
-                                                // и меньше или равен 999999, то присваиваем newCurrentMil значение currentMil
                                                 startMil = newStartMil
                                                 currentMil = startMil
                                                 topExpandedService = false
                                                 newStartMil = ""
                                             } else {
-                                                // в противном случае, присваиваем newCurrentMil пустую строку
                                                 newStartMil = ""
                                             }
                                         })  {
@@ -97,6 +93,10 @@ struct mainView: View {
                                         alignment: .trailing
                                     )
                             }
+                            Text("The current mileage progress will be reset")
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .font(.system(size: 12))
+                                .foregroundColor(.orange)
                         }
                     }
                 }
@@ -107,7 +107,7 @@ struct mainView: View {
                 }
             }
                 
-                // MARK: 2st group
+// MARK: 2st DisclosureGroup
                 
                 DisclosureGroup(isExpanded: $topExpanded) {
                     VStack {
@@ -130,13 +130,10 @@ struct mainView: View {
                                     if let newCurrentMilInt = Int(newCurrentMil),
                                        let currentMilInt = Int(currentMil),
                                        (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
-                                        // если новый текущий пробег больше или равен текущему пробегу,
-                                        // и меньше или равен 999999, то присваиваем newCurrentMil значение currentMil
                                         currentMil = newCurrentMil
                                         topExpanded = false
                                         newCurrentMil = ""
                                     } else {
-                                        // в противном случае, присваиваем newCurrentMil пустую строку
                                         newCurrentMil = ""
                                     }
                                 })  {
@@ -156,10 +153,12 @@ struct mainView: View {
                 }
             }
             }
+            .listStyle(.plain)
         }
+        .frame(maxWidth: .infinity, maxHeight: 500)
+        .background(Color.white)
         
-        
-        // MARK: Save in UD
+// MARK: Save in UserDefaults
         
         .onDisappear {
             UserDefaults.standard.set(selectedInterval, forKey: "selectedInterval")
