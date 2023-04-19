@@ -39,6 +39,16 @@ struct mainView: View {
             return .gray
         }
     }
+        
+        var txt: String {
+            let serviceIn = ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)
+            switch serviceIn {
+            case 0...:
+                return "Service in"
+            default:
+                return "Overrun is"
+            }
+    }
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(0)"
@@ -66,7 +76,8 @@ struct mainView: View {
             
             // MARK: text service
             
-                Text("Service in \((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
+//                Text("Service in \((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
+            Text(txt + " " + "\(((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)) km")
             
             
             List {
