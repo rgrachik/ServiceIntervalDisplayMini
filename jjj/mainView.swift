@@ -19,14 +19,14 @@ struct mainView: View {
         
         let value = percentOfVear
         switch value {
-        case ...0:
-            return opacityColor
         case 0...60:
             return .green
         case 61...95:
             return .orange
         case 96...100:
             return .red
+        case 100...:
+            return opacityColor
         default:
             return .gray
         }
@@ -69,25 +69,26 @@ struct mainView: View {
     var body: some View {
         VStack (alignment: .center, spacing: 20) {
 // MARK: Gauge
-            Gauge(value: Double(currentMil)! , in: Double(startMil)!...Double(startMil)!+Double(selectedInterval)!) {
+            ZStack{
                 Text("\(Image(systemName: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? "oilcan" : "oilcan.fill"))")
-                    .font(.system(size: 20))
-                    .foregroundColor(canTintColor)
+                                .font(.system(size: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? 20 : 70))
+                                .foregroundColor(canTintColor)
+                
+                Gauge(value: Double(currentMil)! , in: Double(startMil)!...Double(startMil)!+Double(selectedInterval)!) {
+//                    Text("\(Image(systemName: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? "oilcan" : "oilcan.fill"))")
+//                        .font(.system(size: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? 20 : 70))
+//                        .foregroundColor(canTintColor)
+                }
+                .gaugeStyle(.accessoryCircularCapacity)
+                .tint(tintColor)
             }
-            .gaugeStyle(.accessoryCircularCapacity)
-            .tint(tintColor)
-            .padding()
-            
             // MARK: text service
             
-//                Text("Service in \((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
             Text(txt + " " + "\(((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)) km")
-            
-            
+          
             List {
                 
 // MARK: 1st DisclosureGroup
-                
                 DisclosureGroup(isExpanded: $topExpandedService) {
                     VStack {
                         VStack {
