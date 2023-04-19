@@ -7,7 +7,38 @@
 
 import SwiftUI
 
+
+
 struct mainView: View {
+    
+    var tintColor: Color {
+        
+        let percentOfVear = Int((Double(currentMil)! - Double(startMil)!) / Double(selectedInterval)! * 100)
+        
+        let value = percentOfVear
+        switch value {
+        case 0...60:
+            return .green
+        case 61...95:
+            return .orange
+        case 96...100:
+            return .red
+        default:
+            return .gray
+        }
+    }
+    
+    var canTintColor: Color {
+        let serviceIn = ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!)
+        switch serviceIn {
+        case 1...999999:
+            return .green
+        case ...0:
+            return .red
+        default:
+            return .gray
+        }
+    }
     
     @State var selectedInterval = UserDefaults.standard.string(forKey: "selectedInterval") ?? "7500"
     @State var currentMil: String = UserDefaults.standard.string(forKey: "currentMil") ?? "\(0)"
@@ -25,20 +56,18 @@ struct mainView: View {
         VStack (alignment: .center, spacing: 20) {
 // MARK: Gauge
             Gauge(value: Double(currentMil)! , in: Double(startMil)!...Double(startMil)!+Double(selectedInterval)!) {
-                Text("\(Image(systemName: "oilcan"))")
+                Text("\(Image(systemName: ((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) >= 0 ? "oilcan" : "oilcan.fill"))")
                     .font(.system(size: 20))
-                    .foregroundColor(.green)
+                    .foregroundColor(canTintColor)
             }
             .gaugeStyle(.accessoryCircularCapacity)
-            .tint(.cyan)
+            .tint(tintColor)
             .padding()
             
             // MARK: text service
             
-            HStack{
-                Text("Service in")
-                Text("\((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
-            }
+                Text("Service in \((Int(startMil)!+Int(selectedInterval)!) - Int(currentMil)!) km")
+            
             
             List {
                 
