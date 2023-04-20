@@ -12,6 +12,7 @@
 		27B7446129E7F78200825B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7446029E7F78200825B3C /* Preview Assets.xcassets */; };
 		27B7446829E7FFC900825B3C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446729E7FFC900825B3C /* mainView.swift */; };
 		27DA95C029F0363C00A9218B /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA95BF29F0363C00A9218B /* SwiftUIView.swift */; };
+		27DA95C229F03CC200A9218B /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DA95C129F03CC200A9218B /* info.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		27B7446029E7F78200825B3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		27B7446729E7FFC900825B3C /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
 		27DA95BF29F0363C00A9218B /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		27DA95C129F03CC200A9218B /* info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			children = (
 				27B7445929E7F78000825B3C /* serviceIntervalApp.swift */,
 				27B7446729E7FFC900825B3C /* mainView.swift */,
+				27DA95C129F03CC200A9218B /* info.swift */,
 				27B7445D29E7F78100825B3C /* Assets.xcassets */,
 				27DA95BF29F0363C00A9218B /* SwiftUIView.swift */,
 				27B7445F29E7F78200825B3C /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */,
+				27DA95C229F03CC200A9218B /* info.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
 				27DA95C029F0363C00A9218B /* SwiftUIView.swift in Sources */,
 			);

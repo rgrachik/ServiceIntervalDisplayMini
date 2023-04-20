@@ -67,6 +67,7 @@ struct mainView: View {
     // MARK: - View
     
     var body: some View {
+        
         VStack (alignment: .center, spacing: 20) {
             // MARK: Gauge
             ZStack{
@@ -128,16 +129,19 @@ struct mainView: View {
                                     )
                                     .toolbar {
                                         ToolbarItem(placement: .keyboard) {
-                                            Button("OK") {
-                                                if let newStartMilInt = Int(newStartMil),
-                                                   let _ = Int(startMil),
-                                                   (newStartMilInt >= 1 && newStartMilInt <= 999999) {
-                                                    startMil = newStartMil
-                                                    currentMil = startMil
-                                                    topExpandedService = false
-                                                    newStartMil = ""
-                                                } else {
-                                                    newStartMil = ""
+                                            HStack {
+                                                Spacer()
+                                                Button("Save") {
+                                                    if let newStartMilInt = Int(newStartMil),
+                                                       let _ = Int(startMil),
+                                                       (newStartMilInt >= 1 && newStartMilInt <= 999999) {
+                                                        startMil = newStartMil
+                                                        currentMil = startMil
+                                                        topExpandedService = false
+                                                        newStartMil = ""
+                                                    } else {
+                                                        newStartMil = ""
+                                                    }
                                                 }
                                             }
                                         }
@@ -150,10 +154,16 @@ struct mainView: View {
                         }
                     }
                 }
+                
             label: {
                 HStack {
                     Image(systemName: "gear")
                     Text("Service")
+                }
+            }
+            .onChange(of: topExpandedService) { newValue in
+                if newValue {
+                    topExpanded = false
                 }
             }
                 
@@ -161,7 +171,12 @@ struct mainView: View {
                 
                 DisclosureGroup(isExpanded: $topExpanded) {
                     VStack {
-                        Text("Enter a new mileage value in \(currentMil)...\((Int(startMil) ?? 0) + (Int(selectedInterval) ?? 0)) km")
+                        Text("Enter a new mileage value.")
+                            .font(.system(size: 12))
+                            .foregroundColor(.gray)
+                            .opacity(0.8)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                        Text("Current value is \(currentMil) km")
                             .font(.system(size: 12))
                             .foregroundColor(.gray)
                             .opacity(0.8)
@@ -186,20 +201,22 @@ struct mainView: View {
                             )
                             .toolbar {
                                 ToolbarItem(placement: .keyboard) {
-                                    Button("OK") {
-                                        if let newCurrentMilInt = Int(newCurrentMil),
-                                           let currentMilInt = Int(currentMil),
-                                           (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
-                                            currentMil = newCurrentMil
-                                            topExpanded = false
-                                            newCurrentMil = ""
-                                        } else {
-                                            newCurrentMil = ""
+                                    HStack {
+                                        Spacer()
+                                        Button("Update") {
+                                            if let newCurrentMilInt = Int(newCurrentMil),
+                                               let currentMilInt = Int(currentMil),
+                                               (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
+                                                currentMil = newCurrentMil
+                                                topExpanded = false
+                                                newCurrentMil = ""
+                                            } else {
+                                                newCurrentMil = ""
+                                            }
                                         }
                                     }
                                 }
                             }
-                        
                     }
                 }
             label: {
@@ -208,11 +225,17 @@ struct mainView: View {
                     Text("Update mileage")
                 }
             }
+            .onChange(of: topExpanded) { newValue in
+                if newValue {
+                    topExpandedService = false
+                }
+            }
             }
             .listStyle(.plain)
         }
         .frame(maxWidth: .infinity, maxHeight: 500)
         .scrollDisabled(true)
+        
         // MARK: Save in UserDefaults
         
         .onDisappear {
