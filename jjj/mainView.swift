@@ -137,6 +137,9 @@ struct mainView: View {
                                                        (newStartMilInt >= 1 && newStartMilInt <= 999999) {
                                                         startMil = newStartMil
                                                         currentMil = startMil
+                                                        UserDefaults.standard.set(selectedInterval, forKey: "selectedInterval")
+                                                        UserDefaults.standard.set(startMil, forKey: "startMil")
+
                                                         topExpandedService = false
                                                         newStartMil = ""
                                                     } else {
@@ -208,6 +211,7 @@ struct mainView: View {
                                                let currentMilInt = Int(currentMil),
                                                (newCurrentMilInt >= currentMilInt && newCurrentMilInt <= 999999) {
                                                 currentMil = newCurrentMil
+                                                UserDefaults.standard.set(currentMil, forKey: "currentMil")
                                                 topExpanded = false
                                                 newCurrentMil = ""
                                             } else {
