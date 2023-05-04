@@ -16,3 +16,5 @@ When changing the oil, you need to specify the mileage and the desired service i
 During operation, it is necessary to periodically update the mileage in order to monitor the condition
 
 ![IMG_9994](https://user-images.githubusercontent.com/112074005/233083319-fe02555e-825e-4920-9645-d056be00e15e.PNG)
+
+In the near future, we plan to implement the MVVM architecture and persistent data storage in Core Data.
