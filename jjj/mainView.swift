@@ -252,7 +252,6 @@ struct mainView: View {
 
 
 
-
 struct main_Previews: PreviewProvider {
     static var previews: some View {
         mainView()
