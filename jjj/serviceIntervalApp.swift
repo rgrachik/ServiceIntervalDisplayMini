@@ -11,7 +11,7 @@ import SwiftUI
 struct serviceIntervalApp: App {
     var body: some Scene {
         WindowGroup {
-            mainView()
+            MainView()
         }
     }
 }
