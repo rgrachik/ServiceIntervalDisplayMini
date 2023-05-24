@@ -12,8 +12,11 @@ struct ParameterDetailView: View {
     var parameter: Parameter
 
     var body: some View {
-        Text("Parameter Detail: \(parameter.type)")
-            .navigationTitle(parameter.type)
+        VStack {
+            Text("Change mileage \(parameter.startMileage)")
+            Text("Interval \(parameter.interval)")
+        }
+        .navigationTitle(parameter.type)
     }
 }
 

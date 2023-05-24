@@ -15,7 +15,6 @@ struct test: View {
                 Text("dd")
             }
         }
-        
     }
 }
 

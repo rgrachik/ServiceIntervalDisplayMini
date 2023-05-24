@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		273A78962A1E642B001DD24D /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78952A1E642B001DD24D /* AddItemView.swift */; };
+		273A78962A1E642B001DD24D /* AddParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78952A1E642B001DD24D /* AddParameterView.swift */; };
 		273A78982A1E6432001DD24D /* ParameterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78972A1E6432001DD24D /* ParameterDetailView.swift */; };
 		273A789A2A1E6439001DD24D /* test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78992A1E6439001DD24D /* test.swift */; };
 		27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7445929E7F78000825B3C /* serviceIntervalApp.swift */; };
@@ -20,7 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		273A78952A1E642B001DD24D /* AddItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		273A78952A1E642B001DD24D /* AddParameterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParameterView.swift; sourceTree = "<group>"; };
 		273A78972A1E6432001DD24D /* ParameterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterDetailView.swift; sourceTree = "<group>"; };
 		273A78992A1E6439001DD24D /* test.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = test.swift; sourceTree = "<group>"; };
 		27B7445629E7F78000825B3C /* jjj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jjj.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +48,7 @@
 			isa = PBXGroup;
 			children = (
 				27B7446729E7FFC900825B3C /* mainView.swift */,
-				273A78952A1E642B001DD24D /* AddItemView.swift */,
+				273A78952A1E642B001DD24D /* AddParameterView.swift */,
 				273A78972A1E6432001DD24D /* ParameterDetailView.swift */,
 				273A78992A1E6439001DD24D /* test.swift */,
 			);
@@ -181,7 +181,7 @@
 			files = (
 				27C8A8AD2A1E9B5600A150A9 /* CarModel.swift in Sources */,
 				27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */,
-				273A78962A1E642B001DD24D /* AddItemView.swift in Sources */,
+				273A78962A1E642B001DD24D /* AddParameterView.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
 				27C8A8B02A1E9BAD00A150A9 /* ContentViewModel.swift in Sources */,
 				273A789A2A1E6439001DD24D /* test.swift in Sources */,

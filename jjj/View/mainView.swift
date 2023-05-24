@@ -22,8 +22,6 @@ struct MainView: View {
                     .onDelete { indexSet in
                         viewModel.removeParameters(at: indexSet)
                     }
-                        Button("Upd", action: {print("f")})
-                        .foregroundColor(.blue)
                 }
                 .listStyle(.sidebar)
                 .navigationTitle("Service")
@@ -36,7 +34,7 @@ struct MainView: View {
                             Image(systemName: "plus")
                         }
                         .sheet(isPresented: $viewModel.showAddModal) {
-                            AddItemView(viewModel: viewModel)
+                            AddParameterView(viewModel: viewModel)
                         }
                     }
                     
