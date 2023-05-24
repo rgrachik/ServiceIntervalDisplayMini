@@ -19,28 +19,34 @@ struct MainView: View {
                             Text(parameter.type)
                         }
                     }
+                    .onDelete { indexSet in
+                        viewModel.removeParameters(at: indexSet)
+                    }
+                        Button("Upd", action: {print("f")})
+                        .foregroundColor(.blue)
                 }
                 .listStyle(.sidebar)
-                .navigationTitle("Service interval display")
+                .navigationTitle("Service")
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button("\(Image(systemName: "plus"))") {
+                        Button(action: {
                             viewModel.showAddModal = true
+                        }) {
+                            Image(systemName: "plus")
                         }
                         .sheet(isPresented: $viewModel.showAddModal) {
                             AddItemView(viewModel: viewModel)
                         }
                     }
+                    
                 }
                 
-                Button("Remove Item") {
-                    viewModel.removeItem()
-                }
             }
         }
     }
 }
+
 
 
 struct ContentView_Previews: PreviewProvider {
