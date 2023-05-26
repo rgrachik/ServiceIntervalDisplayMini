@@ -15,6 +15,7 @@ struct ParameterDetailView: View {
         VStack {
             Text("Change mileage \(parameter.startMileage)")
             Text("Interval \(parameter.interval)")
+            Gauge(value: parameter.remainingResource, label: {})
         }
         .navigationTitle(parameter.type)
     }
@@ -22,6 +23,6 @@ struct ParameterDetailView: View {
 
 struct ParameterDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ParameterDetailView(parameter: Parameter(type: "d", startMileage: 4, interval: 4))
+        ParameterDetailView(parameter: Parameter(car: Car(), type: "d", startMileage: 4, interval: 4))
     }
 }

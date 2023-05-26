@@ -6,8 +6,9 @@
 //
 
 import Foundation
+
 class ContentViewModel: ObservableObject {
-    @Published var parameters = [Parameter(type: "Motor Oil", startMileage: 0, interval: 0)]
+    @Published var parameters = [Parameter(car: Car(), type: "Motor Oil", startMileage: 5000, interval: 10000)]
     @Published var showAddModal = false
     @Published var showEditModal = false
 
@@ -17,14 +18,23 @@ class ContentViewModel: ObservableObject {
     }
 
     func removeItem() {
-           if !parameters.isEmpty {
-               parameters.removeLast()
-           }
-       }
+        if !parameters.isEmpty {
+            parameters.removeLast()
+        }
+    }
     
     func removeParameters(at indices: IndexSet) {
-            parameters.remove(atOffsets: indices)
-        }
-
+        parameters.remove(atOffsets: indices)
+    }
+    
+   
+    
+    func calculateRemainingResource(for parameter: Parameter) -> Double {
+        return parameter.remainingResource
+    }
+    
+    func updateCurrentMileage(for car: Car, newMileage: Int) {
+           car.currentMileage = newMileage
+       }
 }
 

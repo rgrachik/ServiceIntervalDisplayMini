@@ -28,7 +28,7 @@ struct AddParameterView: View {
                 .padding()
             
             Button("Add") {
-                let newParameter = Parameter(type: name,
+                let newParameter = Parameter(car: Car(), type: name,
                                              startMileage: Int(startMileage) ?? 0,
                                              interval: Int(interval) ?? 0)
                 viewModel.addItem(parameter: newParameter)

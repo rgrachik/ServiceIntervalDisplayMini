@@ -17,6 +17,7 @@ struct MainView: View {
                     ForEach(viewModel.parameters, id: \.type) { parameter in
                         NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
                             Text(parameter.type)
+                            Gauge(value: parameter.remainingResource, label: {})
                         }
                     }
                     .onDelete { indexSet in
