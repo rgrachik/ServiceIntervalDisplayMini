@@ -8,5 +8,5 @@
 import Foundation
 
 class Car {
-    var currentMileage: Int = 10000
+    var currentMileage: Int = 0
 }

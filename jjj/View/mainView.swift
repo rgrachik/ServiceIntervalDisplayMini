@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @StateObject private var viewModel = ContentViewModel()
-    
+    @State private var newMileage = ""
     var body: some View {
         NavigationView {
             VStack {
@@ -17,6 +17,7 @@ struct MainView: View {
                     ForEach(viewModel.parameters, id: \.type) { parameter in
                         NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
                             Text(parameter.type)
+                            Text("\(parameter.remainingResource)")
                             Gauge(value: parameter.remainingResource, label: {})
                         }
                     }
@@ -40,14 +41,22 @@ struct MainView: View {
                     }
                     
                 }
+                Text("Текущий пробег: \(viewModel.parameters[0].car.currentMileage)")
+                TextField("Введите новый пробег", text: $newMileage)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding()
                 
                 Button(action: {
-                    viewModel.showEditModal = true
+                    if let newMileageValue = Int(newMileage) {
+                        viewModel.updateCurrentMileage(for: viewModel.parameters[0].car, newMileage: newMileageValue)
+                        newMileage = "" // Сброс значения после обновления пробега
+                    }
                 }) {
-                    Image(systemName: "plus")
-                }
-                .sheet(isPresented: $viewModel.showEditModal) {
-                    AddParameterView(viewModel: viewModel)
+                    Text("Обновить пробег")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color.blue)
+                        .cornerRadius(10)
                 }
                 
             }

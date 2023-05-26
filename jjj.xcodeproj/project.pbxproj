@@ -16,6 +16,7 @@
 		27C8A8AB2A1E9B0300A150A9 /* ParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AA2A1E9B0300A150A9 /* ParameterView.swift */; };
 		27C8A8AD2A1E9B5600A150A9 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AC2A1E9B5600A150A9 /* CarModel.swift */; };
 		27C8A8B02A1E9BAD00A150A9 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AF2A1E9BAD00A150A9 /* ContentViewModel.swift */; };
+		27D54CE62A20E870004BB5F0 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D54CE52A20E870004BB5F0 /* MileageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		27C8A8AA2A1E9B0300A150A9 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
 		27C8A8AC2A1E9B5600A150A9 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		27C8A8AF2A1E9BAD00A150A9 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		27D54CE52A20E870004BB5F0 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 				27B7446729E7FFC900825B3C /* mainView.swift */,
 				273A78952A1E642B001DD24D /* AddParameterView.swift */,
 				273A78972A1E6432001DD24D /* ParameterDetailView.swift */,
+				27D54CE52A20E870004BB5F0 /* MileageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				27C8A8AD2A1E9B5600A150A9 /* CarModel.swift in Sources */,
 				27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */,
 				273A78962A1E642B001DD24D /* AddParameterView.swift in Sources */,
+				27D54CE62A20E870004BB5F0 /* MileageView.swift in Sources */,
 				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
 				27C8A8B02A1E9BAD00A150A9 /* ContentViewModel.swift in Sources */,
 				273A78982A1E6432001DD24D /* ParameterDetailView.swift in Sources */,
