@@ -7,19 +7,31 @@
 
 import SwiftUI
 
-struct test: View {
+struct MileageView: View {
+    @ObservedObject var viewModel: ContentViewModel
+    @State private var newMileage: String = ""
+    
     var body: some View {
-        NavigationStack{
-            List{
-                NavigationLink("sss", destination: MainView())
-                Text("dd")
+        VStack {
+            Text("Текущий пробег: \(viewModel.car.currentMileage)")
+            
+            TextField("Введите пробег", text: $newMileage)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+            
+            Button("Обновить пробег") {
+                if let mileage = Int(newMileage) {
+                    viewModel.updateCurrentMileage(mileage)
+                }
+                newMileage = ""
             }
         }
+        .padding()
     }
 }
 
-struct test_Previews: PreviewProvider {
+
+struct tMileageView_Previews: PreviewProvider {
     static var previews: some View {
-        test()
+        MileageView(viewModel: ContentViewModel())
     }
 }

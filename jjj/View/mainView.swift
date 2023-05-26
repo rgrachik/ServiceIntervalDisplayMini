@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @ObservedObject private var viewModel = ContentViewModel()
     
     var body: some View {
         NavigationView {
             VStack {
                 List {
-                    ForEach(viewModel.parameters, id: \.type) { parameter in
-                        NavigationLink(destination: ParameterDetailView(parameter: parameter)) {
+                    ForEach(viewModel.car.parameters, id: \.type) { parameter in
+                        NavigationLink(destination: ParameterDetailView(parameter: parameter, car: $viewModel.car)) { // Оберните viewModel.car в Binding
                             Text(parameter.type)
                         }
                     }
@@ -24,8 +24,10 @@ struct MainView: View {
                     }
                 }
                 .listStyle(.sidebar)
-                .navigationTitle("Service")
+                .navigationTitle("Service interval display")
                 .navigationBarTitleDisplayMode(.inline)
+                
+                MileageView(viewModel: viewModel)
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
@@ -37,13 +39,12 @@ struct MainView: View {
                             AddParameterView(viewModel: viewModel)
                         }
                     }
-                    
                 }
-                
             }
         }
     }
 }
+
 
 
 
