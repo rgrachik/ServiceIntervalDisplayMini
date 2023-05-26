@@ -30,7 +30,7 @@ struct MileageView: View {
 }
 
 
-struct tMileageView_Previews: PreviewProvider {
+struct MileageView_Previews: PreviewProvider {
     static var previews: some View {
         MileageView(viewModel: ContentViewModel())
     }

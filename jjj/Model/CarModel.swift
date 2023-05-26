@@ -9,6 +9,6 @@ import Foundation
 
 class Car: ObservableObject {
     @Published var currentMileage: Int = 0
-    var parameters: [Parameter] = []
+    var parameters: [Parameter] = [Parameter(type: "Motor Oil", startMileage: 5000, interval: 10000)]
 }
 

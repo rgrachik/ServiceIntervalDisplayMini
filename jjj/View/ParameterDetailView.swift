@@ -11,15 +11,20 @@ struct ParameterDetailView: View {
     var parameter: Parameter
     @Binding var car: Car
 
+    private let wearCalculator = WearCalculator()
+
     var body: some View {
         VStack {
-            Text("\($car.wrappedValue.currentMileage)") // Обращайтесь к wrappedValue для доступа к обернутому значению свойства Binding
+            Text("\($car.wrappedValue.currentMileage)")
             Text("Change mileage \(parameter.startMileage)")
             Text("Interval \(parameter.interval)")
+            Gauge(value: wearCalculator.calculateWear(for: parameter, currentMileage: car.currentMileage), label: {})
+                .padding()
         }
         .navigationTitle(parameter.type)
     }
 }
+
 
 struct ParameterDetailView_Previews: PreviewProvider {
     static var previews: some View {

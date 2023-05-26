@@ -9,14 +9,17 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject private var viewModel = ContentViewModel()
-    
+    private let wearCalculator = WearCalculator()
     var body: some View {
         NavigationView {
             VStack {
                 List {
                     ForEach(viewModel.car.parameters, id: \.type) { parameter in
-                        NavigationLink(destination: ParameterDetailView(parameter: parameter, car: $viewModel.car)) { // Оберните viewModel.car в Binding
-                            Text(parameter.type)
+                        NavigationLink(destination: ParameterDetailView(parameter: parameter, car: $viewModel.car)) {
+                            HStack {
+                                Text(parameter.type)
+                                Text("\(viewModel.calculateWear(for: parameter), specifier: "%.1f")")
+                            }
                         }
                     }
                     .onDelete { indexSet in
@@ -44,6 +47,7 @@ struct MainView: View {
         }
     }
 }
+
 
 
 
