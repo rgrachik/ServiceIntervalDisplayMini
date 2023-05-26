@@ -41,6 +41,15 @@ struct MainView: View {
                     
                 }
                 
+                Button(action: {
+                    viewModel.showEditModal = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .sheet(isPresented: $viewModel.showEditModal) {
+                    AddParameterView(viewModel: viewModel)
+                }
+                
             }
         }
     }
