@@ -7,6 +7,8 @@
 
 import Foundation
 
-class Car {
-    var currentMileage: Int = 0
+class Car: ObservableObject {
+    @Published var currentMileage: Int = 0
+    var parameters: [Parameter] = []
 }
+

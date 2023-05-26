@@ -74,9 +74,9 @@
 		27B7445829E7F78000825B3C /* jjj */ = {
 			isa = PBXGroup;
 			children = (
+				27B7445929E7F78000825B3C /* serviceIntervalApp.swift */,
 				27C8A8A92A1E9AF000A150A9 /* Model */,
 				273A78942A1E63ED001DD24D /* View */,
-				27B7445929E7F78000825B3C /* serviceIntervalApp.swift */,
 				27C8A8AE2A1E9B8C00A150A9 /* ViewModel */,
 				27B7445D29E7F78100825B3C /* Assets.xcassets */,
 				27B7445F29E7F78200825B3C /* Preview Content */,
