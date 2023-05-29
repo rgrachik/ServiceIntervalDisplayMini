@@ -8,5 +8,12 @@
 import Foundation
 
 class Car {
-    var currentMileage: Int = 0
+    var name: String
+    var currentMileage: Int
+    
+    init(currentMileage: Int, name: String) {
+        self.currentMileage = currentMileage
+        self.name = name
+    }
+    
 }

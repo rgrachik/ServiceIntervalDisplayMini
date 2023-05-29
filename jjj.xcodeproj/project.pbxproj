@@ -7,30 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		273A78962A1E642B001DD24D /* AddParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78952A1E642B001DD24D /* AddParameterView.swift */; };
-		273A78982A1E6432001DD24D /* ParameterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273A78972A1E6432001DD24D /* ParameterDetailView.swift */; };
+		27A7A7BF2A24B1B700A54C2D /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A7A7BE2A24B1B700A54C2D /* MainView.swift */; };
+		27A7A7C12A24B56D00A54C2D /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A7A7C02A24B56D00A54C2D /* MainViewModel.swift */; };
+		27A7A7C32A24B9C700A54C2D /* CarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27A7A7C22A24B9C700A54C2D /* CarViewModel.swift */; };
 		27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7445929E7F78000825B3C /* serviceIntervalApp.swift */; };
 		27B7445E29E7F78100825B3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7445D29E7F78100825B3C /* Assets.xcassets */; };
 		27B7446129E7F78200825B3C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B7446029E7F78200825B3C /* Preview Assets.xcassets */; };
-		27B7446829E7FFC900825B3C /* mainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446729E7FFC900825B3C /* mainView.swift */; };
+		27B7446829E7FFC900825B3C /* carView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B7446729E7FFC900825B3C /* carView.swift */; };
 		27C8A8AB2A1E9B0300A150A9 /* ParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AA2A1E9B0300A150A9 /* ParameterView.swift */; };
 		27C8A8AD2A1E9B5600A150A9 /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AC2A1E9B5600A150A9 /* CarModel.swift */; };
-		27C8A8B02A1E9BAD00A150A9 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27C8A8AF2A1E9BAD00A150A9 /* ContentViewModel.swift */; };
-		27D54CE62A20E870004BB5F0 /* MileageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D54CE52A20E870004BB5F0 /* MileageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		273A78952A1E642B001DD24D /* AddParameterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddParameterView.swift; sourceTree = "<group>"; };
-		273A78972A1E6432001DD24D /* ParameterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterDetailView.swift; sourceTree = "<group>"; };
+		27A7A7BE2A24B1B700A54C2D /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		27A7A7C02A24B56D00A54C2D /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		27A7A7C22A24B9C700A54C2D /* CarViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarViewModel.swift; sourceTree = "<group>"; };
 		27B7445629E7F78000825B3C /* jjj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jjj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B7445929E7F78000825B3C /* serviceIntervalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = serviceIntervalApp.swift; sourceTree = "<group>"; };
 		27B7445D29E7F78100825B3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27B7446029E7F78200825B3C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		27B7446729E7FFC900825B3C /* mainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainView.swift; sourceTree = "<group>"; };
+		27B7446729E7FFC900825B3C /* carView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = carView.swift; sourceTree = "<group>"; };
 		27C8A8AA2A1E9B0300A150A9 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
 		27C8A8AC2A1E9B5600A150A9 /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
-		27C8A8AF2A1E9BAD00A150A9 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
-		27D54CE52A20E870004BB5F0 /* MileageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MileageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,10 +45,8 @@
 		273A78942A1E63ED001DD24D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				27B7446729E7FFC900825B3C /* mainView.swift */,
-				273A78952A1E642B001DD24D /* AddParameterView.swift */,
-				273A78972A1E6432001DD24D /* ParameterDetailView.swift */,
-				27D54CE52A20E870004BB5F0 /* MileageView.swift */,
+				27A7A7BE2A24B1B700A54C2D /* MainView.swift */,
+				27B7446729E7FFC900825B3C /* carView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,7 +100,8 @@
 		27C8A8AE2A1E9B8C00A150A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				27C8A8AF2A1E9BAD00A150A9 /* ContentViewModel.swift */,
+				27A7A7C02A24B56D00A54C2D /* MainViewModel.swift */,
+				27A7A7C22A24B9C700A54C2D /* CarViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,13 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27A7A7C12A24B56D00A54C2D /* MainViewModel.swift in Sources */,
 				27C8A8AD2A1E9B5600A150A9 /* CarModel.swift in Sources */,
+				27A7A7BF2A24B1B700A54C2D /* MainView.swift in Sources */,
 				27B7445A29E7F78000825B3C /* serviceIntervalApp.swift in Sources */,
-				273A78962A1E642B001DD24D /* AddParameterView.swift in Sources */,
-				27D54CE62A20E870004BB5F0 /* MileageView.swift in Sources */,
-				27B7446829E7FFC900825B3C /* mainView.swift in Sources */,
-				27C8A8B02A1E9BAD00A150A9 /* ContentViewModel.swift in Sources */,
-				273A78982A1E6432001DD24D /* ParameterDetailView.swift in Sources */,
+				27A7A7C32A24B9C700A54C2D /* CarViewModel.swift in Sources */,
+				27B7446829E7FFC900825B3C /* carView.swift in Sources */,
 				27C8A8AB2A1E9B0300A150A9 /* ParameterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
